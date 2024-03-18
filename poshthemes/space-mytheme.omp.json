@@ -1,0 +1,151 @@
+//this is a theme personalized by me out of the Space theme in the oh-my-posh avaliable themes
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "template": "\n",
+          "type": "text"
+        },
+        {
+          "foreground": "#26C6DA",
+          "properties": {
+            "ubuntu": "\uf31b"
+          },
+          "style": "plain",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
+          "type": "os"
+        },
+        {
+          //"foreground": "#48CBDB",
+          "foreground": "#FFB43A",
+          "style": "plain",
+          //"template": " <b>{{ .UserName }}<#ffffff>@</><#B86DCB>{{ .HostName }}</></b>",
+          "template": " <b>{{ .UserName }}<#ffffff>@</><#85B347>{{ .HostName }}</></b>",
+          "type": "session"
+        },
+        {
+          //"foreground": "lightGreen",
+          "foreground": "#00E87B",
+          "properties": {
+          "style": "mixed",
+          "mixed_threshold": 25,
+          "mapped_locations": {"/home/{{.UserName}}/Documents":"~/🗎"}
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#fad800",
+          "properties": {
+            "branch_icon": "\uf418 ",
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .UpstreamIcon}} <b>{{ .HEAD }}</b>{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "type": "git"
+        }
+      ], "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        // {
+        //   "background": "#242424",
+        //   "foreground": "#959595",
+        //   "template": "{{.Name}} |",
+        //   "type": "shell"
+        // },
+        {
+          "background": "#242424",
+          "foreground": "#959595",
+          "template": "{{.OS}} |",
+          "type": "os"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#959595",
+          "style": "plain",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#959595",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " \ueba2 {{ .FormattedMs }} ",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "template": "\n",
+          "type": "text"
+        },
+        {
+          "foreground": "#7FD5EA",
+          "style": "powerline",
+          "template": "[\ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] ",
+          "type": "go"
+        },
+        {
+          "foreground": "#76b367",
+          "style": "powerline",
+          "template": "[\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}] ",
+          "type": "node"
+        },
+        {
+          "foreground": "#f44336",
+          "style": "powerline",
+          "template": "[\ue791{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] ",
+          "type": "ruby"
+        },
+        {
+          "foreground": "#ea2d2e",
+          "style": "powerline",
+          "template": "[\ue738 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] ",
+          "type": "java"
+        },
+        {
+          "foreground": "#4063D8",
+          "style": "powerline",
+          "template": " \ue624 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "julia"
+        },
+        {
+          // "foreground": "#9A79FF", // morado original
+          "foreground": "#ffd343",
+          "properties": {
+            "home_enabled": true
+          },
+          "style": "powerline",
+          // "template": "[<#ffd343>\ue235</> <#3776ab>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}</>] ", // logo python amarillo ppython y versión azul python
+          "template": "[🐍<#3776ab>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}</>] ",
+          "type": "python"
+        },
+        {
+          // "foreground": "#FFD54F", // color amarillo original
+          "foreground": "#B11F1F",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
