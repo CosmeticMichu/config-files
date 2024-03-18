@@ -11,6 +11,6 @@ fortune -l -n 100
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # >>>>>>>>>>>>>>> vivid: package to manage LS_COLORS variable <<<<<<<<<<<<<<<<
-# the original LS_COLORS variable is stored in the ORIGINAL variable and can be restored with >
+# the original LS_COLORS variable is stored in the ORIGINAL variable and can be restored with LS_COLORS=$ORIGINAL -> didn't worked and ORIGINAL is empty
 # export LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS="$(vivid generate ~/.config/vivid/mytheme.ylm)"
