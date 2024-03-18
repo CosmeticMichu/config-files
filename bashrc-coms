@@ -1,0 +1,16 @@
+# >>>>>>>>>>>>>>>>> oh-my-posh bash terminal stile config <<<<<<<<<<<<<<<<<<<
+# eval "$(oh-my-posh init bash)"
+# eval "$(oh-my-posh init bash --config ~/jandedobbeleer.omp.json)"
+# the json file themes (.poshthemes) are stored in the same directory as oh-my-posh
+eval "$(oh-my-posh init bash --config ~/.config/poshthemes/space-mytheme.omp.json)" #catppucci>
+
+# >>>>>>>>>>>>>>>> just prints a random quote every time a session is started <<<<<<<<<<<<<<<<<
+fortune -l -n 100
+
+# fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# >>>>>>>>>>>>>>> vivid: package to manage LS_COLORS variable <<<<<<<<<<<<<<<<
+# the original LS_COLORS variable is stored in the ORIGINAL variable and can be restored with >
+# export LS_COLORS="$(vivid generate molokai)"
+export LS_COLORS="$(vivid generate ~/.config/vivid/mytheme.ylm)"
