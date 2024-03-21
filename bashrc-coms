@@ -14,3 +14,18 @@ fortune -l -n 100
 # the original LS_COLORS variable is stored in the ORIGINAL variable and can be restored with LS_COLORS=$ORIGINAL -> didn't worked and ORIGINAL is empty
 # export LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS="$(vivid generate ~/.config/vivid/molokai-mytheme.ylm)"
+
+# >>>>>>>>>>>>>>> turns the spack env on and print status <<<<<<<<<<<<<<<<<<
+YELLOW='\033[38;5;214m'
+GREEN='\033[38;5;70m'
+RED='-033[0;31m'
+BOLD='\033[1m'
+RS='\033[0m' # Reset Format
+
+printf "\n${BOLD}${YELLOW}Loading Spack...${RS}\r"
+
+if source $HOME/spack/share/spack/setup-env.sh; then
+   printf "${BOLD}${GREEN}Spack loaded!   ${RS}"
+else
+   printf "${BOLD}${RED}Spack load failed!${RS}"
+fi
