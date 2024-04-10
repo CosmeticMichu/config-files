@@ -1,0 +1,8 @@
+# ignores everything
+/*
+# except for these files
+!.gitignore
+!neofetch/*
+!vivid/*
+!poshthemes/space-mytheme.omp.json
+!bashrc-cmds
